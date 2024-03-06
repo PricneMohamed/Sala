@@ -44,6 +44,7 @@ export default function Projectcontainer() {
   useEffect(() => {
     const checkNextSala = setInterval(() => {
       if (moment().isAfter(Fajr) && moment().isBefore(Dhuhr)) {
+
         setnextSala("الظهر");
       } else if (moment().isAfter(Dhuhr) && moment().isBefore(Asr)) {
         setnextSala("العصر");
@@ -56,11 +57,11 @@ export default function Projectcontainer() {
       }
     }, 1000);
     return () => clearInterval(checkNextSala);
-  }, []);
+  },);
   return (
-    <div className="Projectcontainer w-[100vw] h-[100vh]">
-      <div className="text-white font-bold flex justify-evenly flex-wrap">
-        <h1 className="text-[30px] mt-20 w-[280px]">
+    <div className="Projectcontainer p-2">
+      <div className="text-white mt-10 font-bold flex justify-evenly flex-wrap">
+        <h1 className="text-[30px] mt-3 w-[300px] p-3">
           الصلاة التالية : {nextSala}
         </h1>
         <h1 className="text-[30px] mt-20 w-[250px]">{time}</h1>
