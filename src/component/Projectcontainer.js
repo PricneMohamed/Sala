@@ -17,7 +17,9 @@ export default function Projectcontainer() {
       .then((res) => res.json())
       .then((data) => setdata(data.data.timings));
   }, [cityValue]);
-
+useEffect(()=>{
+  document.title=""
+})
   const chooseCity = {
     city: "الاسكندرية",
     value: "Alexandria",
